@@ -1,0 +1,18 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Secrets
+.env
+
+# Node / Hardhat (if used)
+node_modules/
+artifacts/
+cache/
+
+# Editor / OS
+.vscode/
+.DS_Store
+Thumbs.db

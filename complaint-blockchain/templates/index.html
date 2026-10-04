@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blockchain Complaint System</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 640px; margin: 2rem auto; padding: 0 1rem; }
+    textarea, input { width: 100%; padding: 8px; margin: 6px 0; box-sizing: border-box; }
+    button { padding: 8px 16px; cursor: pointer; }
+    section { border: 1px solid #ccc; border-radius: 8px; padding: 1rem; margin-bottom: 1rem; }
+    #status { color: #0a58ca; word-break: break-all; }
+    #wallet { font-family: monospace; font-size: 0.85rem; word-break: break-all; }
+  </style>
+</head>
+<body>
+  <h1>Complaint Registration</h1>
+
+  <section>
+    <button id="connectBtn">Connect MetaMask</button>
+    <p>Wallet: <span id="wallet">not connected</span></p>
+  </section>
+
+  <section>
+    <h2>Submit a complaint</h2>
+    <textarea id="complaintText" rows="5" placeholder="Describe your complaint..."></textarea>
+    <button id="submitBtn">Submit</button>
+  </section>
+
+  <section>
+    <h2>Verify a complaint</h2>
+    <input id="verifyId" type="number" min="0" placeholder="On-chain ID">
+    <textarea id="verifyText" rows="3" placeholder="Paste the exact complaint text"></textarea>
+    <button id="verifyBtn">Verify</button>
+    <p id="verifyResult"></p>
+  </section>
+
+  <p id="status"></p>
+  <p><a href="/chain">View public chain</a></p>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.13.4/ethers.umd.min.js"></script>
+  <script src="{{ url_for('static', filename='js/web3.js') }}"></script>
+</body>
+</html>
